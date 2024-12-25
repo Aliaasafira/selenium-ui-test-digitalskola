@@ -23,6 +23,14 @@ async function saucedemologin(){
         let menuButton = await driver.findElement(By.xpath("//button[@id='react-burger-menu-btn']"));
         assert.strictEqual(await menuButton.isDisplayed(), true, "Menu Button is not visible");
 
+        //add to cart
+        await driver.findElement(By.id('add-to-cart-sauce-labs-backpack')).click();
+
+        //memastikan item sukses ditambahkan ke cart
+        await driver.findElement(By.className('shopping_cart_link')).click();
+        let itemCart = await driver.findElement(By.className('inventory_item_name')).getText();
+        assert.strictEqual(itemCart.includes('Sauce Labs Backpack'), true, "Item does not exist on cart");
+
     } finally {
         await driver.quit();
     }
