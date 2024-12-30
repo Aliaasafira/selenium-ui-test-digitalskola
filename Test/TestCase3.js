@@ -1,7 +1,7 @@
 const { Builder } = require('selenium-webdriver');
-const LoginPage = require('./WebComponent/LoginPage');
-const CartPage = require('./WebComponent/CartPage');
-const CartItemPage = require('./WebComponent/CartItemPage');
+const LoginPage = require('../WebComponent/LoginPage');
+const CartPage = require('../WebComponent/CartPage');
+const CartItemPage = require('../WebComponent/CartItemPage');
 const assert = require('assert');
 const fs = require('fs');
 
